@@ -1,0 +1,152 @@
+Multi tasking - doing more than one task
+Process vs Thread :
+
+Process - each application we start in computer is one process / Main thread
+
+with in the process - we can light weight process- thread
+
+Thread - 
+
+==================
+
+
+What is a thread in JAVA : 
+
+A class that IS A Thread - java.lang
+
+creating a class that inherits from Thread class
+
+Main Thread : 
+	 By default in java, there is main thread exeucted
+	 
+	 main method starts executing - main thread starts
+	 main method ends - main thread stop executing
+	 
+	 
+	 
+Two ways create a threa
+
+1) Write a call that extends Thread
+
+class MyThread extends Thread{
+
+	public void run(){
+			for(){
+			}
+	}
+}
+
+MyThread t1 = new MyThread();
+t1.start()
+
+2) Create class that implements Runnable interface
+provide a body for run method
+
+class ThreadRunnable implements Runnable{
+	public void run(){
+			for(){
+			}
+	}
+}
+
+ThreadRunnable runnbale  = new ThreadRunnable();
+Thread t1 = new Thread(runnbale);
+t1.start();
+
+
+===============
+Thread life cycle : 
+
+1) New 
+ 		MyThread t1 = new MyThread();
+ 		or 
+	ThreadRunnable runnbale  = new ThreadRunnable();
+	Thread t1 = new Thread(runnbale);
+	
+	t1 is in New State 
+
+2) ready 
+	t1.start(); // not in running
+	
+	
+3) Running - 
+		dispatch scheuduler(IN Operating system) assign proccessor to thread
+		Operating system
+		dispatch scheuduler - Round robin / Priority Preemtion
+		Round robin - scheduler will give eqaul amount of time to each thread
+		Priority Preemtion - some threads get importan than others
+		
+		in MS OS - they using round robin
+		linux based -they priority premetion
+
+		
+Threads can go running state to 
+
+1) sleep - Thread.sleep(2000);
+   from sleep state - the thread goes to ready()
+   
+2) Suspended - depricated method - no more using in java
+	from suspended,resume it goes to ready state
+	
+3) Blocked state
+	If a thread is executing I/O operations
+	once I/O operation is done, thread will move from Blocked state Ready
+
+4) wait state
+	if we can a method called wait()
+	
+	from wait state thread goes ready state
+	notify()
+	or
+	notifyAll()
+	
+	
+5) Dead state
+	once the thread completes its execution,then thread moves from runnign state to Dead.
+	
+
+
+Daemon Thread and User Thread :
+
+Daemon Thread :
+		which runs as long as main thread is alive
+		
+		
+		Customer Objects data 
+		
+		key			value
+		username - customerobject
+		
+
+
+	
+	
+	
+	
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	 
+
+   
+
